@@ -1,0 +1,116 @@
+﻿<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+@model List<Car_Rent_All.Models.Szerzodes>
+
+@{
+    ViewBag.Title = "Saját szerződéseim";
+}
+
+<h3>Jóváhagyásra vár: </h3>
+
+@{
+    var counter = 0;
+
+    <table id="szerzodesek" class="table table-hover">
+        <thead class="table-primary">
+            <tr>
+                <th>Jármű</th>
+                <th>Bérlés kezdő időpontja</th>
+                <th>Bérlés záró időpontja</th>
+                <th>Fizetendő díj</th>
+                <th>Kaució</th>
+                <th>Státusz</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var szerzodes in Model)
+            {
+                if (szerzodes.Jovahagy == 0)
+                {
+                    var kaucio = szerzodes.Koltseg * 0.2;
+                    <tr>
+                        <td>@szerzodes.Jarmu.Nev</td>
+                        <td>@szerzodes.BerlesKezdoIdopont.ToString("yyyy-MM-dd")</td>
+                        <td>@szerzodes.BerlesZaroIdopont.ToString("yyyy-MM-dd")</td>
+                        <th>@szerzodes.Koltseg Ft</th>
+                        <th>@kaucio Ft</th>
+                        <td>Jóváhagyásra vár</td>
+                        <td><button class='btn btn-danger js-delete' data-szerzodes-id="@szerzodes.Id"><i class="bi-trash"></i></button></td>
+                    </tr>
+                }
+                counter++;
+            }
+
+        </tbody>
+
+    </table>
+    if (counter == 0)
+    {
+        <p>Nincsenek jóváhagyásra váró szerződések!</p>
+    }
+
+}
+
+<h3>Aktuális, bérelt járművek</h3>
+
+@{
+    var counter1 = 0;
+
+    <table class="table table-hover">
+        <thead class="table-primary">
+            <tr>
+                <th>Jármű</th>
+                <th>Bérlés kezdő időpontja</th>
+                <th>Bérlés záró időpontja</th>
+                <th>Befizetett bérleti díj</th>
+                <th>Státusz</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var szerzodes in Model)
+            {
+                if (szerzodes.Jovahagy == 1 && szerzodes.BerlesZaroIdopont > DateTime.Now)
+                {
+                    <tr>
+                        <td>@szerzodes.Jarmu.Nev</td>
+                        <td>@szerzodes.BerlesKezdoIdopont.ToString("yyyy-MM-dd")</td>
+                        <td>@szerzodes.BerlesZaroIdopont.ToString("yyyy-MM-dd")</td>
+                        <td>@szerzodes.Koltseg</td>
+                        <td>Jóváhagyva, folyamatban</td>
+                    </tr>
+                }
+                counter1++;
+            }
+
+        </tbody>
+
+    </table>
+
+}
+
+<button class="btn btn-primary" onclick="location.href='@Url.Action("ArchivUgyfel", "Szerzodesek", new { email = User.Identity.Name})'">Korábbi szerződéseim</button>
+
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#szerzodesek").on("click", ".js-delete", function () {
+                var btn = $(this);
+                if (confirm("Valóban vissza szeretnéd vonni az árajánlat igényt?")) {
+                    $.ajax({
+                        url: "/api/szerzodesek/" + btn.attr("data-szerzodes-id"),
+                        method: "DELETE",
+                        success: function () {
+                            btn.parents("tr").remove();
+                        }
+                    });
+                }
+            });
+
+        });
+    </script>
+}
+
