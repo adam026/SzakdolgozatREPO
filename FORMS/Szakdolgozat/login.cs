@@ -33,7 +33,6 @@ namespace Szakdolgozat
             public string user_id { get; set; } 
             public string username { get; set; }
             public string password { get; set; }
-
         }
 
         private List<user> Users = new List<user>();
@@ -53,12 +52,10 @@ namespace Szakdolgozat
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-      
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
             try
             {
                 var conn = new MySqlConnection(ConnectionString);
@@ -76,17 +73,13 @@ namespace Szakdolgozat
                 }
                 r.Close();
                 conn.Close();
-
             }
             catch
             {
-                MessageBox.Show("Adatbazis elerese sikertelen, a program kilep!", "Hibauzenet");
+                MessageBox.Show("Adatbázis elérése sikertelen, a program kilép!", "Hibaüzenet");
                 Properties.Settings.Default.PasswordValid = false;
                 Application.Exit();
-                
             }
-
-
 
             foreach (user u in Users)
             {
@@ -97,7 +90,6 @@ namespace Szakdolgozat
                         Properties.Settings.Default.UserName=u.username;
                         Properties.Settings.Default.PasswordValid = true;
                     }
-                        
                 }
             }
             if (Properties.Settings.Default.PasswordValid)
@@ -106,17 +98,13 @@ namespace Szakdolgozat
             }
             else
             {
-                MessageBox.Show("Hibas felhasznalo nev, vagy jelszo");
+                MessageBox.Show("Hibás felhasználónév, vagy jelszó");
             }
-        
-            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            
             this.Close();
-                  
         }
     }
 }

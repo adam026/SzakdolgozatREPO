@@ -56,41 +56,50 @@
             // 
             // btnAddNewCustomer
             // 
-            this.btnAddNewCustomer.Location = new System.Drawing.Point(108, 93);
+            this.btnAddNewCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAddNewCustomer.Location = new System.Drawing.Point(94, 223);
+            this.btnAddNewCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddNewCustomer.Name = "btnAddNewCustomer";
-            this.btnAddNewCustomer.Size = new System.Drawing.Size(442, 89);
+            this.btnAddNewCustomer.Size = new System.Drawing.Size(295, 58);
             this.btnAddNewCustomer.TabIndex = 0;
-            this.btnAddNewCustomer.Text = "Uj ugyfel felvetele";
+            this.btnAddNewCustomer.Text = "Új ügyfél felvétele";
             this.btnAddNewCustomer.UseVisualStyleBackColor = true;
             this.btnAddNewCustomer.Click += new System.EventHandler(this.btnAddNewCustomer_Click);
             // 
             // btnCustomerEditor
             // 
-            this.btnCustomerEditor.Location = new System.Drawing.Point(108, 210);
+            this.btnCustomerEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCustomerEditor.Location = new System.Drawing.Point(94, 299);
+            this.btnCustomerEditor.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustomerEditor.Name = "btnCustomerEditor";
-            this.btnCustomerEditor.Size = new System.Drawing.Size(442, 89);
+            this.btnCustomerEditor.Size = new System.Drawing.Size(295, 58);
             this.btnCustomerEditor.TabIndex = 1;
-            this.btnCustomerEditor.Text = "Szerkesztes";
+            this.btnCustomerEditor.Text = "Szerkesztés";
             this.btnCustomerEditor.UseVisualStyleBackColor = true;
             this.btnCustomerEditor.Click += new System.EventHandler(this.btnCustomerEditor_Click);
             // 
             // btnDeleteCustomer
             // 
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(108, 325);
+            this.btnDeleteCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(94, 374);
+            this.btnDeleteCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(442, 89);
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(295, 58);
             this.btnDeleteCustomer.TabIndex = 2;
-            this.btnDeleteCustomer.Text = "Ugyfel torlese";
+            this.btnDeleteCustomer.Text = "Ügyfél törlése";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
             this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(108, 490);
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnClose.Location = new System.Drawing.Point(94, 481);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(442, 89);
+            this.btnClose.Size = new System.Drawing.Size(295, 58);
             this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Bezar / Kivalaszt";
+            this.btnClose.Text = "Bezár / Kiválaszt ";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.kilepesToolStripMenuItem_Click);
             // 
@@ -99,27 +108,32 @@
             this.groupBox1.Controls.Add(this.lbl1);
             this.groupBox1.Controls.Add(this.tbSearchName);
             this.groupBox1.Controls.Add(this.dgvCustomerList);
-            this.groupBox1.Location = new System.Drawing.Point(697, 93);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox1.Location = new System.Drawing.Point(458, 157);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(731, 486);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(521, 441);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ugyfelek Listaja:";
+            this.groupBox1.Text = "Ügyfelek listája";
             // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(268, 34);
+            this.lbl1.Location = new System.Drawing.Point(136, 53);
+            this.lbl1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(154, 20);
+            this.lbl1.Size = new System.Drawing.Size(136, 17);
             this.lbl1.TabIndex = 7;
-            this.lbl1.Text = "Nev szerinti kereses:";
+            this.lbl1.Text = "Név szerinti keresés";
             // 
             // tbSearchName
             // 
-            this.tbSearchName.Location = new System.Drawing.Point(447, 31);
+            this.tbSearchName.Location = new System.Drawing.Point(276, 53);
+            this.tbSearchName.Margin = new System.Windows.Forms.Padding(2);
             this.tbSearchName.Name = "tbSearchName";
-            this.tbSearchName.Size = new System.Drawing.Size(256, 26);
+            this.tbSearchName.Size = new System.Drawing.Size(232, 23);
             this.tbSearchName.TabIndex = 6;
             this.tbSearchName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchName_KeyUp);
             // 
@@ -139,7 +153,8 @@
             this.Id,
             this.Telefon,
             this.Email});
-            this.dgvCustomerList.Location = new System.Drawing.Point(26, 87);
+            this.dgvCustomerList.Location = new System.Drawing.Point(20, 96);
+            this.dgvCustomerList.Margin = new System.Windows.Forms.Padding(2);
             this.dgvCustomerList.MultiSelect = false;
             this.dgvCustomerList.Name = "dgvCustomerList";
             this.dgvCustomerList.ReadOnly = true;
@@ -147,12 +162,12 @@
             this.dgvCustomerList.RowHeadersWidth = 62;
             this.dgvCustomerList.RowTemplate.Height = 28;
             this.dgvCustomerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomerList.Size = new System.Drawing.Size(677, 373);
+            this.dgvCustomerList.Size = new System.Drawing.Size(488, 326);
             this.dgvCustomerList.TabIndex = 0;
             // 
             // Nev
             // 
-            this.Nev.HeaderText = "Nev";
+            this.Nev.HeaderText = "Név";
             this.Nev.MinimumWidth = 8;
             this.Nev.Name = "Nev";
             this.Nev.ReadOnly = true;
@@ -160,21 +175,21 @@
             // 
             // ZipCode
             // 
-            this.ZipCode.HeaderText = "Iranyitoszam";
+            this.ZipCode.HeaderText = "Irányítószám";
             this.ZipCode.MinimumWidth = 8;
             this.ZipCode.Name = "ZipCode";
             this.ZipCode.ReadOnly = true;
             // 
             // City
             // 
-            this.City.HeaderText = "Helyseg";
+            this.City.HeaderText = "Helység";
             this.City.MinimumWidth = 8;
             this.City.Name = "City";
             this.City.ReadOnly = true;
             // 
             // Address
             // 
-            this.Address.HeaderText = "Cim";
+            this.Address.HeaderText = "Cím";
             this.Address.MinimumWidth = 8;
             this.Address.Name = "Address";
             this.Address.ReadOnly = true;
@@ -205,14 +220,14 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ujUgyfelToolStripMenuItem,
             this.kilepesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1477, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(1098, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -223,44 +238,44 @@
             this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem,
             this.ugyfelTorleseToolStripMenuItem});
             this.ujUgyfelToolStripMenuItem.Name = "ujUgyfelToolStripMenuItem";
-            this.ujUgyfelToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
-            this.ujUgyfelToolStripMenuItem.Text = "Opciok";
+            this.ujUgyfelToolStripMenuItem.Size = new System.Drawing.Size(57, 22);
+            this.ujUgyfelToolStripMenuItem.Text = "Opciók";
             // 
             // ujUgyfelFelveteleToolStripMenuItem
             // 
             this.ujUgyfelFelveteleToolStripMenuItem.Name = "ujUgyfelFelveteleToolStripMenuItem";
-            this.ujUgyfelFelveteleToolStripMenuItem.Size = new System.Drawing.Size(420, 34);
-            this.ujUgyfelFelveteleToolStripMenuItem.Text = "Uj Ugyfel felvetele";
+            this.ujUgyfelFelveteleToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.ujUgyfelFelveteleToolStripMenuItem.Text = "Új ügyfél felvétele";
             this.ujUgyfelFelveteleToolStripMenuItem.Click += new System.EventHandler(this.btnAddNewCustomer_Click);
             // 
             // meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem
             // 
             this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Name = "meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem";
-            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Size = new System.Drawing.Size(420, 34);
-            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Text = "Meglevo ugyfel adatainak szerkesztese";
+            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Text = "Meglévő ügyfél adatainak szerkesztése";
             this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Click += new System.EventHandler(this.btnCustomerEditor_Click);
             // 
             // ugyfelTorleseToolStripMenuItem
             // 
             this.ugyfelTorleseToolStripMenuItem.Name = "ugyfelTorleseToolStripMenuItem";
-            this.ugyfelTorleseToolStripMenuItem.Size = new System.Drawing.Size(420, 34);
-            this.ugyfelTorleseToolStripMenuItem.Text = "Ugyfel torlese";
+            this.ugyfelTorleseToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.ugyfelTorleseToolStripMenuItem.Text = "Ügyfél törlése";
             this.ugyfelTorleseToolStripMenuItem.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // kilepesToolStripMenuItem
             // 
             this.kilepesToolStripMenuItem.Name = "kilepesToolStripMenuItem";
-            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(70, 29);
-            this.kilepesToolStripMenuItem.Text = "Bezar";
+            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(47, 22);
+            this.kilepesToolStripMenuItem.Text = "Bezár";
             this.kilepesToolStripMenuItem.Click += new System.EventHandler(this.kilepesToolStripMenuItem_Click);
             // 
             // frmCustomerAdmin
             // 
             this.AcceptButton = this.btnAddNewCustomer;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1477, 679);
+            this.ClientSize = new System.Drawing.Size(1098, 697);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
@@ -268,11 +283,12 @@
             this.Controls.Add(this.btnCustomerEditor);
             this.Controls.Add(this.btnAddNewCustomer);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCustomerAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ugyfeladatok kezelese";
+            this.Text = "Ügyféladatok kezelése";
             this.Load += new System.EventHandler(this.frmCustomerAdmin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

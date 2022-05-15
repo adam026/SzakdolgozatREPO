@@ -24,7 +24,7 @@ namespace Szakdolgozat
 
             if (id>0)
             {
-                btnOK.Text = "Mentes";
+                btnOK.Text = "Mentés";
                 using (var conn = new MySqlConnection(ConnectionString))
                 {
                     conn.Open();
@@ -33,7 +33,6 @@ namespace Szakdolgozat
                         $"WHERE uf_id={id}", conn);
 
                     var sor = command.ExecuteReader();
-
                     while (sor.Read())
                     {
                         tbName.Text = sor[1].ToString();
@@ -43,34 +42,28 @@ namespace Szakdolgozat
                         tbAddress.Text = sor[5].ToString();
                         tbEmail.Text = sor[6].ToString();
                     }
-
                 }
-    
             }
-
             else
             {
-                btnOK.Text = "Uj letrehozasa";
+                btnOK.Text = "Új létrehozása";
             }
-
         }
         private void frmCutomerDataInputForm_Load(object sender, EventArgs e)
         {
             SetColor();
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             if(!Int32.TryParse(tbPostCode.Text, out _))
             {
-                MessageBox.Show("Hibas 'Iranyitoszam' mezo kitoltes", "Hiba");
+                MessageBox.Show("Hibás 'Iranyitoszam' mező kitöltés", "Hiba");
                 return;
             }
 
@@ -90,7 +83,6 @@ namespace Szakdolgozat
                         $"email='{tbEmail.Text}' " +
                         $"WHERE uf_id={Id};", conn);
                     command.ExecuteNonQuery();
-
                 }
                 else
                 {
@@ -105,12 +97,9 @@ namespace Szakdolgozat
                         $"'{tbAddress.Text}'," +
                         $"'{tbEmail.Text}');", conn);
                         command.ExecuteNonQuery();
-
                 }
-
-
             }
-            MessageBox.Show("Uj ugyfel elmentve!");
+            MessageBox.Show("Új ügyfél elmentve!");
             this.Close();
         }
 
@@ -120,7 +109,6 @@ namespace Szakdolgozat
             this.ForeColor = Properties.Settings.Default.ColorFore;
             this.btnCancel.BackColor = Properties.Settings.Default.ColorButton;
             this.btnOK.BackColor = Properties.Settings.Default.ColorButton;
-
         }
     }
 }

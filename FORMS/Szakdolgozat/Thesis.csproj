@@ -140,6 +140,18 @@
     <Compile Include="CustomerAdmin.Designer.cs">
       <DependentUpon>CustomerAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContract.Designer.cs">
+      <DependentUpon>frmContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmContractPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContractPrint.Designer.cs">
+      <DependentUpon>frmContractPrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewContracts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +201,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Exit.resx">
       <DependentUpon>Exit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmContract.resx">
+      <DependentUpon>frmContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmContractPrint.resx">
+      <DependentUpon>frmContractPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewContracts.resx">
       <DependentUpon>NewContracts.cs</DependentUpon>
@@ -242,11 +260,22 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\beallit.png" />
+    <Content Include="Resources\felhasz.png" />
     <Content Include="Resources\ford_fiesta.png" />
+    <Content Include="Resources\gepjarmu.png" />
+    <Content Include="Resources\kilep.png" />
+    <Content Include="Resources\lezar.png" />
+    <Content Include="Resources\loggo.png" />
+    <Content Include="Resources\Logo_kicsi.png" />
+    <Content Include="Resources\logo_kis.png" />
     <Content Include="Resources\No_Photography.png" />
+    <Content Include="Resources\nymomtat.png" />
     <Content Include="Resources\opel_astra.png" />
     <Content Include="Resources\renault_captur.png" />
     <Content Include="Resources\renault_clio.png" />
+    <Content Include="Resources\szerzodes.png" />
+    <Content Include="Resources\ugyfel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

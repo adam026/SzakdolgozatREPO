@@ -27,7 +27,6 @@ namespace Szakdolgozat
         private void ContractCloser_Load(object sender, EventArgs e)
         {
             SetColor();
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -38,15 +37,13 @@ namespace Szakdolgozat
         private void btnCloseContract_Click(object sender, EventArgs e)
         {
             string ErrorMessage = "";
-            if (tbOdometer.Text.Length == 0 || !Int32.TryParse(tbOdometer.Text, out _)) ErrorMessage += "Hibas a 'Kilometer' mezo kitoltese\n";
+            if (tbOdometer.Text.Length == 0 || !Int32.TryParse(tbOdometer.Text, out _)) ErrorMessage += "Hibás a 'Kilometer' mező kitöltése\n";
           
             if(ErrorMessage != "")
             {
                 MessageBox.Show(ErrorMessage);
                 return;
             }
-
-
 
             using (var conn = new MySqlConnection(ConnectionString))
             {
@@ -61,12 +58,8 @@ namespace Szakdolgozat
 
                 command.ExecuteNonQuery();
             }
-
             MessageBox.Show("Szerzodes lezarva!");
             this.Close();
-
-
-            
         }
         private void SetColor()
         {
