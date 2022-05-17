@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 
 namespace Car_Rent_All.Controllers
 {
@@ -118,8 +119,17 @@ namespace Car_Rent_All.Controllers
             {
                 szerzodesInDb.Jovahagy = 1;
                 jarmu.Elerheto = 0;
+                if (szerzodesInDb.BerlesKezdoIdopont < DateTime.Today)
+                {
+                    szerzodesInDb.BerlesKezdoIdopont = DateTime.Today;
+                }
+                
             }
+
             _context.SaveChanges();
+
+
+            
 
             return RedirectToAction("Index", "Szerzodesek");
         }
